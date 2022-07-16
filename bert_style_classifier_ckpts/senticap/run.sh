@@ -1,0 +1,16 @@
+CUDA_VISIBLE_DEVICES=1 python -u train_style_classifier_for_extraction.py \
+                --do_train \
+                --do_eval \
+                --output_dir output/classifier/senticap/ \
+                --style0_train_text_path data/senticap/neg_train.txt \
+                --style1_train_text_path data/senticap/pos_train.txt \
+                --style0_val_text_path data/senticap/neg_val.txt \
+                --style1_val_text_path data/senticap/pos_val.txt \
+                --log_path logs/train_style_classifier_for_extraction_senticap.log \
+                --max_length 64 \
+                --save_steps 0 \
+                --logging_steps 0 \
+                --batch_size 64 \
+                --num_train_epochs 3 \
+                --weight_decay 0.05616671055927714 \
+                --learning_rate 1.9487736976137728e-05
