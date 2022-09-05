@@ -4,7 +4,7 @@
 import torch
 from transformers import (BertForSequenceClassification, BertTokenizer)
 import os
-os.chdir('./utils')
+# os.chdir('./utils')
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # 加载预训练好的基于bert的风格判别器

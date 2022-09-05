@@ -1,4 +1,4 @@
-# 生成object word词表，来自VG数据集给出的1600个类别
+# 生成object word词表，来自VG数据集给出的1600个类别objects_vocab.txt
 import json
 
 def plural(word):

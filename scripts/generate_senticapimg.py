@@ -1,4 +1,3 @@
-# encoding: utf-8
 # 整理senticap的2360张图片
 import json
 import os

@@ -21,8 +21,8 @@ class CE_weighted(nn.Module):
         # weight = torch.ones(logit.size(0)).to(device)
         weight_ce = weight.unsqueeze(1).expand(logit.size(0), logit.size(1)).unsqueeze(2).expand(logit.size())  # (batch_size, 21, vocab_size)
         weighted_logit_logsoftmax = logit_logsoftmax*weight_ce
-        target_cal = pack_padded_sequence(target, cap_len, batch_first=True, enforce_sorted=False)[0]
-        logit_cal = pack_padded_sequence(weighted_logit_logsoftmax, cap_len, batch_first=True, enforce_sorted=False)[0]
+        target_cal = pack_padded_sequence(target, cap_len.cpu(), batch_first=True, enforce_sorted=False)[0]
+        logit_cal = pack_padded_sequence(weighted_logit_logsoftmax, cap_len.cpu(), batch_first=True, enforce_sorted=False)[0]
         loss_ce = self.nll_func(logit_cal, target_cal)
 
         return loss_ce
@@ -39,8 +39,8 @@ class CE_KL(nn.Module):
         target = cap[:, 1:]
         cap_len = cap_len - 1
 
-        target = pack_padded_sequence(target, cap_len, batch_first=True, enforce_sorted=False)[0]
-        logit = pack_padded_sequence(logit, cap_len, batch_first=True, enforce_sorted=False)[0]
+        target = pack_padded_sequence(target, cap_len.cpu(), batch_first=True, enforce_sorted=False)[0]
+        logit = pack_padded_sequence(logit, cap_len.cpu(), batch_first=True, enforce_sorted=False)[0]
 
         # reconstruct loss
         loss_ce = self.ce(logit, target)
@@ -69,8 +69,8 @@ class CE_KL_weighted(nn.Module):
         # weight = torch.ones(logit.size(0)).to(device)
         weight_ce = weight.unsqueeze(1).expand(logit.size(0), logit.size(1)).unsqueeze(2).expand(logit.size())  # (batch_size, 21, vocab_size)
         weighted_logit_logsoftmax = logit_logsoftmax*weight_ce
-        target_cal = pack_padded_sequence(target, cap_len, batch_first=True, enforce_sorted=False)[0]
-        logit_cal = pack_padded_sequence(weighted_logit_logsoftmax, cap_len, batch_first=True, enforce_sorted=False)[0]
+        target_cal = pack_padded_sequence(target, cap_len.cpu(), batch_first=True, enforce_sorted=False)[0]
+        logit_cal = pack_padded_sequence(weighted_logit_logsoftmax, cap_len.cpu(), batch_first=True, enforce_sorted=False)[0]
         loss_ce = self.nll_func(logit_cal, target_cal)
 
         # weight = torch.ones(mu.size(0)).to(device)
@@ -98,8 +98,8 @@ class CE_KL_weighted_1(nn.Module):
         # weight = torch.ones(logit.size(0)).to(device)
         weight_ce = weight.unsqueeze(1).expand(logit.size(0), logit.size(1)).unsqueeze(2).expand(logit.size())  # (batch_size, 21, vocab_size)
         weighted_logit_logsoftmax = logit_logsoftmax*weight_ce
-        target_cal = pack_padded_sequence(target, cap_len, batch_first=True, enforce_sorted=False)[0]
-        logit_cal = pack_padded_sequence(weighted_logit_logsoftmax, cap_len, batch_first=True, enforce_sorted=False)[0]
+        target_cal = pack_padded_sequence(target, cap_len.cpu(), batch_first=True, enforce_sorted=False)[0]
+        logit_cal = pack_padded_sequence(weighted_logit_logsoftmax, cap_len.cpu(), batch_first=True, enforce_sorted=False)[0]
         loss_ce = self.nll_func(logit_cal, target_cal)
 
         # weight = torch.ones(mu.size(0)).to(device)
@@ -126,8 +126,8 @@ class CE_selected(nn.Module):
         target = cap[:, 1:]
         cap_len = cap_len - 1
 
-        target = pack_padded_sequence(target, cap_len, batch_first=True, enforce_sorted=False)[0]
-        logit = pack_padded_sequence(logit, cap_len, batch_first=True, enforce_sorted=False)[0]
+        target = pack_padded_sequence(target, cap_len.cpu(), batch_first=True, enforce_sorted=False)[0]
+        logit = pack_padded_sequence(logit, cap_len.cpu(), batch_first=True, enforce_sorted=False)[0]
 
         # reconstruct loss
         loss_ce = self.ce(logit, target)

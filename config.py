@@ -21,7 +21,7 @@ parser.add_argument('--test_neg', default='./data/dataset_neg_test.json')
 
 parser.add_argument('--save_loss_freq', type=int, default=20)
 parser.add_argument('--save_model_freq', type=int, default=10000)
-parser.add_argument('--log_dir', default='/home/chengkz/checkpoints/MultiStyle_IC_v3/log/{}')
+parser.add_argument('--log_dir', default='/home/chengkz/checkpoints/ADS_Cap/log/{}')
 parser.add_argument('--recheck_model_path', default='./models/Discriminator/model_3800.pt')
 
 parser.add_argument('--batch_size', type=int, default=100)

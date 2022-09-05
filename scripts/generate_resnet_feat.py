@@ -1,4 +1,5 @@
-# 使用paired数据：为用到的COCO和flickrstyle中图片生成resnet特征
+# 使用paired数据：为用到的COCO、FlickrStyle和SentiCap中的图片生成resnet特征
+# 注意，这些特征没有用于训练而是只用于测试
 import os
 import sys
 import json
@@ -121,6 +122,6 @@ imgs_senticap = []
 for item in dataset_senticap:
     imgs_senticap.append(item["filename"])
 
-# generate_feat(transforms, flickr8k_dir, imgs_flickrstyle, flickrstyle_out_dir)
-# generate_feat(transforms, coco_train_dir, imgs_coco, coco_out_dir)
+generate_feat(transforms, flickr8k_dir, imgs_flickrstyle, flickrstyle_out_dir)
+generate_feat(transforms, coco_train_dir, imgs_coco, coco_out_dir)
 generate_feat(transforms, senticap_img_dir, imgs_senticap, senticap_out_dir)

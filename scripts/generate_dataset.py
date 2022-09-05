@@ -1,5 +1,7 @@
 # 整合flickrstyle+senticap+coco，形成train、val和test的数据集
+# dataset_coco.json是coco数据集原始文件
 # 每个item：{"caption":xxx, "style":xxx, "objects":xxx, "caption_style":xxx, "filename":xxx, "split":xxx}
+# objects为根据object词表提取出的object words
 # 这里的val和test数据集的"caption"中将包含多个ref
 # 而对于train，"caption"只有一个
 import json

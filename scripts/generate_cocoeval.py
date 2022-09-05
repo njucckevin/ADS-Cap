@@ -1,9 +1,9 @@
 # 将flickrstyle和senticap的ref的格式转化为便于pycoco直接计算指标的格式，用于val和test时计算Bleu等指标
 import json
 from tqdm import tqdm
-
-eval_text_dir = '../data/dataset_fu_val.json'
-cocoeval_out_dir = '../data/pycocoref_fu_val.json'
+"""
+eval_text_dir = '../data/dataset_ro_test.json'
+cocoeval_out_dir = '../data/pycocoref_ro_test.json'
 
 eval_dataset = json.load(open(eval_text_dir, 'r'))
 
@@ -27,8 +27,8 @@ with open(cocoeval_out_dir, 'w') as f:
     json.dump(cocoeval_out, f)
 
 """
-eval_text_dir = '../data/dataset_pos_val.json'
-cocoeval_out_dir = '../data/pycocoref_pos_val.json'
+eval_text_dir = '../data/dataset_pos_test.json'
+cocoeval_out_dir = '../data/pycocoref_pos_test.json'
 
 eval_dataset = json.load(open(eval_text_dir, 'r'))
 
@@ -51,7 +51,7 @@ for step, item in tqdm(enumerate(eval_dataset)):
 print(len(cocoeval_out))
 with open(cocoeval_out_dir, 'w') as f:
     json.dump(cocoeval_out, f)
-"""
+
 """
 # 用于测试普通NIC模型在senticap上的指标
 dataset_senticap_dir = '../data/dataset_senticap.json'

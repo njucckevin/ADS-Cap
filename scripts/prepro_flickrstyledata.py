@@ -1,4 +1,5 @@
 # 整理flickrstyle的数据， 统一处理为：{"raw":xxx, "caption":xxx, "style":xxx, "caption_style":xxx, "filename":xxx, "split":xxx}的格式
+# raw_style_dict是MemCap中为四个数据集提取出的风格部分
 import json
 import pickle
 import random

@@ -1,5 +1,4 @@
 # 利用【训练集】训练风格判别器判断一个caption是否带有风格
-# 利用data_load_ws，训练哪种风格时就只sample事实性+对应风格的样本
 import torch
 import random
 import numpy as np

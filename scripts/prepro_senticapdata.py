@@ -1,9 +1,10 @@
 # 整理senticap的数据，统一处理为：{"captions":[{"raw":xxx, "caption":xxx, "caption_style":xxx}, ...], "style":xxx, "filename":xxx, "split":xxx}的格式
+# raw_style_dict是MemCap中为四个数据集提取出的风格部分
 import json
 import random
 from tqdm import tqdm
 
-senticap_data_dir = '/Users/cckevin/Desktop/datasets/Senticap_dataset/data/senticap_dataset.json'
+senticap_data_dir = '../data/senticap.json'
 senticap_data = json.load(open(senticap_data_dir, 'r'))["images"]
 
 senticap_train = [item for item in senticap_data if item["split"] == "train"]

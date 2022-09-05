@@ -1,3 +1,4 @@
+# stylelabel（不使用CVAE）的baseline
 import torch
 import random
 import numpy as np

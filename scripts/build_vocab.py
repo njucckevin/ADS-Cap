@@ -5,7 +5,7 @@ import pickle
 import sys
 from tqdm import tqdm
 
-sys.path.append('.')
+sys.path.append('..')
 from utils.vocab import Vocabulary
 
 vocab = Vocabulary()
