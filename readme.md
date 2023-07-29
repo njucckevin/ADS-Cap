@@ -1,5 +1,15 @@
 # ADS-Cap: A Framework for Accurate and Diverse Stylized Captioning with Unpaired Stylistic Corpora
-
+This repo provides the source code & data of our paper: [ADS-Cap: A Framework for Accurate and Diverse Stylized Captioning with Unpaired Stylistic Corpora](https://link.springer.com/chapter/10.1007/978-3-031-17120-8_57).
+```
+@inproceedings{cheng2022ads,
+  title={ADS-Cap: A Framework for Accurate and Diverse Stylized Captioning with Unpaired Stylistic Corpora},
+  author={Cheng, Kanzhi and Ma, Zheng and Zong, Shi and Zhang, Jianbing and Dai, Xinyu and Chen, Jiajun},
+  booktitle={CCF International Conference on Natural Language Processing and Chinese Computing},
+  pages={736--748},
+  year={2022},
+  organization={Springer}
+}
+```
 ## Prepare data
 
 Step1: prepare SentiCap img `generate_senticapimg.py`
