@@ -1,5 +1,5 @@
 # ADS-Cap: A Framework for Accurate and Diverse Stylized Captioning with Unpaired Stylistic Corpora
-This repo provides the source code & data of our paper: [ADS-Cap: A Framework for Accurate and Diverse Stylized Captioning with Unpaired Stylistic Corpora](https://link.springer.com/chapter/10.1007/978-3-031-17120-8_57).
+This repo provides the source code & data of our paper: [ADS-Cap: A Framework for Accurate and Diverse Stylized Captioning with Unpaired Stylistic Corpora](https://arxiv.org/abs/2308.01143).
 ```
 @inproceedings{cheng2022ads,
   title={ADS-Cap: A Framework for Accurate and Diverse Stylized Captioning with Unpaired Stylistic Corpora},
